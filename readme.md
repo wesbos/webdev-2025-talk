@@ -1,5 +1,3 @@
-# Next Gen Server JS
+# Web Dev 2025 Slides
 
-A talk. Use your arrow keys
-
-<https://wesbos.github.io/next-gen-server-js>
+WIP
