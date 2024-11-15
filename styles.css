@@ -30,7 +30,7 @@
   );
   --gradient: linear-gradient(
     125deg,
-    var(--gradColor1) 0%,
+    ` var(--gradColor1) 0%,
     var(--gradColor2) 100%
   );
   --yellow: #ffc600;
@@ -40,12 +40,33 @@ mark {
   background: var(--yellow);
 }
 
-.wrap {
+.wrap,
+h2,
+h1 {
   paint-order: stroke fill;
   display: inline-block;
-  letter-spacing: -0.1ch;
+  letter-spacing: 0;
   -webkit-text-stroke: 20px black;
-  text-shadow: 10px 10px 0 black, -10px 10px 0 black, 15px 15px 0 var(--yellow);
+  --walk: 0.05em;
+  --walkHalf: calc(var(--walk) * 1.5);
+  text-shadow: var(--walk) var(--walk) 0 black,
+    calc(var(--walk) * -1) var(--walk) 0 black,
+    var(--walkHalf) var(--walkHalf) 0 var(--yellow);
+}
+
+span.word {
+  display: inline-block;
+  /* border: 2px solid red; */
+}
+
+span.space,
+span.punctuation {
+  display: inline-block;
+  /* border: 2px solid blue; */
+  white-space: pre-wrap;
+}
+span.space {
+  width: 0.3ch;
 }
 
 span.letter {
@@ -74,8 +95,7 @@ body {
   font-family: "Ika VAR";
   font-style: normal;
 }
-
-@font-face {
+` @font-face {
   src: url("./fonts/display.woff") format("woff2-variations");
   font-family: "Ika VAR";
   font-style: italic;
@@ -83,7 +103,6 @@ body {
 
 .slides {
   & > article {
-    border: 0;
     border: 2px solid white;
   }
 }
@@ -127,7 +146,7 @@ h1 {
   font-size: 250px;
 }
 h2 {
-  font-size: 200px;
+  font-size: 120px;
 }
 h3 {
   font-size: 150px;
@@ -190,8 +209,10 @@ article:has(> img:only-child) {
     <img>
   </article>
 */
-article:has(h2 + img):not(:has(:nth-child(3))) {
-  gap: 50px;
+article:has(h2 + img):not(:has(& > :nth-child(3))) {
+  grid-template-rows: auto 1fr;
+  justify-items: stretch;
+  justify-content: stretch;
 }
 
 /*
@@ -212,4 +233,14 @@ article:has(> :is(h1, h2, h3, h4, h4, h5, h6):only-child) {
 
 .balance {
   text-wrap: balance;
+}
+
+.side-by-side {
+  display: grid;
+  grid-auto-flow: column;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
