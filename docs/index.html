@@ -6,28 +6,24 @@
     
     
     <link rel="icon" href="https://fav.farm/👨‍💻" />
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.151.3/three.min.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.11.0/lib/p5.min.js"></script>
     
-    <script type="module" crossorigin src="/next-gen-server-js/assets/index.016b87a5.js"></script>
-    <link rel="stylesheet" href="/next-gen-server-js/assets/index.2b9e5b42.css">
+    <script type="module" crossorigin src="/next-gen-server-js/assets/index.0766fa6b.js"></script>
+    <link rel="stylesheet" href="/next-gen-server-js/assets/index.c976fe4e.css">
   </head>
 
   <body>
     <section class="slides layout-regular template-default">
-      <article>
-        <div id="trunk"></div>
-        <h1>Next-Gen<br />Serverside<br />JavaScript!</h1>
+      <article style="--display: block">
+        <h1>Web Development in 2025</h1>
+        <p>Wes Bos × @wesbos × wesbos.com</p>
       </article>
 
-      <article>
-        <h1>
-          <mark>Hi, I&apos;m<br />Wes Bos</mark>
-        </h1>
+      <article style="align-content: center; grid-auto-rows: auto">
+        <h1><mark>Hi, I'm Wes Bos</mark></h1>
         <p class="sub">Hamilton, On 🇨🇦</p>
         <p class="sub">@wesbos on 𝕏, gram, tok, tube and suits</p>
       </article>
-      <article class="first">
+      <article>
         <div class="columns">
           <div>
             <h2>Web<br />Dev<br />Courses</h2>
@@ -42,609 +38,344 @@
         </div>
       </article>
 
+      <article></article>
       <article>
-        <h1>What is this talk about?</h1>
-        <p class="sub">Server Side JavaScript</p>
-        <!-- IF you are building an app with server JS, whether its an API, a React App, these are the things you wannt to pay attention to.  -->
-      </article>
-
-      <article>
-        <h1>JavaScript Runtimes</h1>
-        <p>Engines + APIS === Runtime</p>
-      </article>
-
-      <article class="browsers">
-        <style>
-          .browsers img {
-            max-width: 100px;
-            margin: 0 1rem;
-          }
-          .browsers p {
-            display: grid;
-            place-items: center;
-            grid-auto-flow: column;
-          }
-        </style>
+        <p>The web is awesome.</p>
         <p>
-          V8 → <img src="/next-gen-server-js/assets/chrome.c24bb399.svg" /><img
-            src="/next-gen-server-js/assets/edge.8f192af5.png"
-          /><img src="/next-gen-server-js/assets/chromium.6b58ab47.png" />
-        </p>
-        <p>Spider Monkey → <img src="/next-gen-server-js/assets/firefox.a215097d.png" /></p>
-        <p>JavaScriptCore → <img src="/next-gen-server-js/assets/safari.9d723a4b.png" /></p>
-      </article>
-
-      <article>
-        <div class="columns">
-          <div>
-            <img src="/next-gen-server-js/assets/node.c716a3d9.png" />
-            <h3>Node.js</h3>
-          </div>
-          <h3>→</h3>
-          <img src="/next-gen-server-js/assets/v8.6966a77a.png" alt="" />
-        </div>
-      </article>
-
-      <article>
-        <div class="columns">
-          <div>
-            <img src="/next-gen-server-js/assets/deno.ce7e91d4.svg" />
-            <h3>Deno</h3>
-            <p class="small">[Deno Deploy, Netlify Edge, Supabase Edge]</p>
-          </div>
-          <h3>→</h3>
-          <img src="/next-gen-server-js/assets/v8.6966a77a.png" alt="" />
-        </div>
-      </article>
-
-      <article>
-        <div class="columns">
-          <div>
-            <img src="/next-gen-server-js/assets/cloudflare.8c06e3a1.jpg" />
-            <h3>Cloudflare<br />Workers</h3>
-            <p class="small">[Workerd]</p>
-          </div>
-          <h3>→</h3>
-          <img src="/next-gen-server-js/assets/v8.6966a77a.png" alt="" />
-        </div>
-      </article>
-      <article>
-        <div class="columns">
-          <div>
-            <img src="/next-gen-server-js/assets/bun.6395a2d7.svg" />
-            <h3>Bun</h3>
-          </div>
-          <h3>→</h3>
-          <img src="/next-gen-server-js/assets/jsc.987c0559.jpg" alt="" />
-        </div>
-      </article>
-
-      <article>
-        <div class="columns">
-          <div>
-            <img src="/next-gen-server-js/assets/fastly.2af8f59f.png" />
-            <h4>Fastly<br />Compute<br />@edge</h4>
-          </div>
-          <h3>→</h3>
-          <img src="/next-gen-server-js/assets/spidermonkey.8303ed62.png" alt="" />
-        </div>
-      </article>
-      <article>
-        <div class="columns">
-          <div>
-            <img src="/next-gen-server-js/assets/alibaba.99a834f3.png" />
-            <h4>Alibaba<br />Edge<br />Compute</h4>
-          </div>
-          <h3>→</h3>
-          <img src="/next-gen-server-js/assets/v8.6966a77a.png" alt="" />
-        </div>
-      </article>
-      <article>
-        <div class="columns">
-          <div>
-            <img
-              src="https://avatars.githubusercontent.com/u/3299148?s=248&v=4"
-            />
-            <h4>llrt</h4>
-          </div>
-          <h3>→</h3>
-          <img
-            src="https://blogger.googleusercontent.com/img/a/AVvXsEjzb7KVdSlhe4cl6D_-bUvhl0FxC_P8LhJVUAS1dGCqz01RL9kpFJHu2Eoeb6KEoIRt1hkaK_cVS3N82ozT5D_ySSRb4k-keTA25LyrwUwR7oQMorS-zPDnBrlmVMHObh7DqnVJUCSZt7-_3kqlYBsBrWDU98IQo_CdpNpr6bmdF7pq-4S9YTjUU24X=w400-h400"
-            alt=""
-          />
-        </div>
-        <p>*experimental*</p>
-      </article>
-
-      <article>
-        <div class="coloumns">
-          <img src="/next-gen-server-js/assets/bloomberg.4ffcc6f7.png" />
-          <img src="/next-gen-server-js/assets/bytedance.039c017e.png" />
-        </div>
-      </article>
-
-      <article>
-        <h1>So if my math is correct...</h1>
-      </article>
-
-      <article>
-        <h2>3 Browser JS Runtimes</h2>
-        <div class="grid">
-          <img src="/next-gen-server-js/assets/chrome.c24bb399.svg" />
-          <img src="/next-gen-server-js/assets/firefox.a215097d.png" />
-          <img src="/next-gen-server-js/assets/safari.9d723a4b.png" />
-        </div>
-      </article>
-
-      <article>
-        <h2>6+ Server JS Runtimes</h2>
-        <div class="grid">
-          <img src="/next-gen-server-js/assets/node.c716a3d9.png" />
-          <img src="/next-gen-server-js/assets/deno.ce7e91d4.svg" />
-          <img src="/next-gen-server-js/assets/cloudflare.8c06e3a1.jpg" />
-          <img src="/next-gen-server-js/assets/bun.6395a2d7.svg" />
-          <img src="/next-gen-server-js/assets/fastly.2af8f59f.png" />
-          <img src="/next-gen-server-js/assets/alibaba.99a834f3.png" />
-        </div>
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/ie6.3feacc2f.jpg" alt="" />
-      </article>
-
-      <article>
-        <h2>
-          The next generation of server JS we write will be
-          <mark>standards based</mark>.
-        </h2>
-      </article>
-      <article>
-        <h3>
-          Yes, run it anywhere, but it also means we have
-          <mark>interchangable</mark> + <mark>composable</mark> layers
-        </h3>
-      </article>
-
-      <article>
-        <h1>Should you care?</h1>
-        <p>maybe. You should care about the <mark>standards</mark></p>
-      </article>
-
-      <article>
-        <h1>WHY</h1>
-        <p>Why do we have so many runtimes?</p>
-      </article>
-
-      <article>
-        <h2>Better</h2>
-        <ul class="build">
-          <li>TS out of the Box</li>
-          <li>A push for Standard APIs</li>
-          <li>ESM Spec</li>
-          <li>Easy wins (dotenv, prompt, JSX, etc..)</li>
-          <li>A Joy to work with</li>
-        </ul>
-      </article>
-
-      <article>
-        <h2>Faster</h2>
-        <ul class="build">
-          <li>"cold starts"</li>
-          <li>"Rust"</li>
-          <li>"WASM"</li>
-          <li>"Async"</li>
-        </ul>
-      </article>
-
-      <article>
-        <h2>Faster - Cheaper?</h2>
-        <ul>
-          <li>At scale, faster is a lot cheaper</li>
-          <li>CPU Time vs Wall Time</li>
-        </ul>
-        <!-- <p>
-          TODO: There has been lots of talk about $5 Servers vs outragous SaaS
-          Bills lately.
+          <mark>HTML</mark>, <mark>CSS</mark> and <mark>JS</mark> is quickly
+          improving.
         </p>
         <p>
-          I'm not here to tell you that one type of server is cheaper than
-          another. I am here to tell you that at scale, cutting your compute
-          down by 20% can mean hundreds of thousands, if not not millions of
-          dollars saved.
-        </p> -->
+          Let's take a look at some features that you can
+          <mark>start to use</mark> or <mark>look forward to</mark> in 2025.
+        </p>
       </article>
-
       <article>
-        <h2>Stronger</h2>
-        <img src="/next-gen-server-js/assets/security.3582845a.jpg" />
-      </article>
-
-      <article>
-        <h1>Server Kinds</h1>
-      </article>
-
-      <article>
-        <h3>Traditional VM / Long Running Server</h3>
-        <ul class="build">
-          <li>Always running</li>
-          <li>Maintain Memory</li>
-          <li>Scaling up via Memory/CPU</li>
-          <li>Scaling up via more servers</li>
-          <!-- TODO Examples -->
-        </ul>
-      </article>
-
-      <article>
-        <h2>Serverless Functions</h2>
-        <ul class="build">
-          <li>Only Run in short bursts when needed</li>
-          <li>Scale up by running more</li>
-          <li>Pay for what you need</li>
-        </ul>
-        <!-- TODO Examples -->
-      </article>
-
-      <article>
-        <h2>Edge Functions</h2>
-        <ul class="build">
-          <li>Run closer to your user</li>
-          <li>Can run in-between / intercept requests</li>
-          <li><strike>Limited API</strike></li>
-          <li>Not 100% node compat (close!)</li>
-        </ul>
-        <!-- Notes: These lines are blurred.. -->
-        <!-- TODO Examples -->
-      </article>
-
-      <article>
-        <h2>What's a poor dev to do? Support 6+ Runtimes?!</h2>
-        <p class="build">well, ya. But also no.</p>
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/js.48d02175.png" alt="" />
-      </article>
-
-      <article>
-        <h2>Web Standards</h2>
-        <div class="grid">
-          <div>
-            <img
-              style="height: 200px; object-fit: contain; width: auto"
-              src="/next-gen-server-js/assets/tc39.de2fa905.svg"
-              alt=""
-            />
-            <p>TC39</p>
-            <p>Async + Await, esm, const, arrow functions</p>
-          </div>
-          <div>
-            <img
-              style="height: 200px; object-fit: contain; width: auto"
-              src="/next-gen-server-js/assets/w3c.2c649c57.png"
-              alt=""
-            />
-            <p>W3C</p>
-            <p>WebRTC, Streams API, Web Components</p>
-          </div>
-          <div>
-            <img
-              style="height: 200px; object-fit: contain; width: auto"
-              src="/next-gen-server-js/assets/whatwg.02c8530d.png"
-              alt=""
-            />
-            <p>WHATWG</p>
-            <p>Fetch, Service Workers, Resize Observer</p>
-          </div>
+        <h2>Customizable Select</h2>
+        <div class="side-by-side">
+          <img src="/next-gen-server-js/assets/select.aaacdde5.png" />
+          <video src="/next-gen-server-js/assets/select.5feeebdf.mp4" muted loop autoplay playsinline></video>
         </div>
       </article>
 
-      <article>
-        <img class="fit" src="/next-gen-server-js/assets/node-fetch.891221d5.png" alt="" />
+      <article class="topic-slide">
+        <h1>Temporal</h1>
+        <p>Standardized API for working with<br />Dates, Time and Durations</p>
       </article>
 
       <article>
-        <img class="fit" src="/next-gen-server-js/assets/fetch-standard.ac2b2be7.png" alt="" />
+        <img src="/next-gen-server-js/assets/temporal-tz.ef1d348e.png" alt="" class="fit" />
       </article>
-
       <article>
-        <img src="/next-gen-server-js/assets/wintergc.68ce46e7.png" alt="" />
+        <img src="/next-gen-server-js/assets/temporal-bday.abfdc82d.png" alt="" class="fit" />
       </article>
-
       <article>
-        <h2>Browser JS is Server JS</h2>
-        <p>JS is JS</p>
-        <p>We don't need different ways to do the same thing</p>
-        <p>Let's look at some of those standards</p>
+        <img src="/next-gen-server-js/assets/temporal-since.398cceff.png" alt="" class="fit" />
       </article>
-
-      <article>
-        <h1>Fetch</h1>
-        <p>Web Request + Web Response are life</p>
+      <!--  SKip, not enough time
+      <article class="topic-slide">
+        <h2>AsyncContext</h2>
+      </article> -->
+      <article class="topic-slide">
+        <div class="icons">
+          <img src="/next-gen-server-js/assets/node.c716a3d9.png" alt="" />
+          <img src="/next-gen-server-js/assets/deno.ce7e91d4.svg" alt="" />
+          <img src="/next-gen-server-js/assets/bun.6395a2d7.svg" alt="" />
+          <img src="/next-gen-server-js/assets/cloudflare.72d1032e.svg" alt="" />
+          <img src="/next-gen-server-js/assets/safari.9d723a4b.png" alt="" />
+          <img src="/next-gen-server-js/assets/chrome.c24bb399.svg" alt="" />
+          <img src="/next-gen-server-js/assets/firefox.a215097d.png" alt="" />
+        </div>
+        <h2>Web Primitives</h2>
+        <p>Server, Browser, Worker, AHHH</p>
+      </article>
+      <article class="topic-slide">
+        <h2>Fetch, Request, Response</h2>
       </article>
 
       <article>
         <h2>In the Browser, We send Requests</h2>
         <img src="/next-gen-server-js/assets/request.4965cadf.png" alt="" />
       </article>
+
       <article>
         <h2>On the Server, we handle them!</h2>
         <img src="/next-gen-server-js/assets/req2.560305ef.png" alt="" />
       </article>
 
       <article>
+        <h2>Same Handler, 3 runtimes!</h2>
         <img src="/next-gen-server-js/assets/server-grid.679c7ba0.png" alt="" />
       </article>
 
       <article>
-        <h1>Node</h1>
-        <p>Not Native, But:</p>
-        <p class="balance">
-          Hono.js, H3, @whatwg-node/server, Fastify Plugin, Next.js Routes,
-          Sveltekit, Astro + more
-        </p>
+        <h2>Standards!</h2>
+        <ul class="buzz-word-grid">
+          <li>Web Streams</li>
+          <li>Websockets</li>
+          <li>Fetch</li>
+          <li>AbortController</li>
+          <li>Request</li>
+          <li>Response</li>
+          <li>Headers</li>
+          <li>URL</li>
+          <li>URLSearchParams</li>
+          <li>FormData</li>
+          <li>Blob</li>
+          <li>File</li>
+          <li>Uint8Array</li>
+          <li>WebCrypto</li>
+        </ul>
       </article>
 
       <article>
-        <h1>Web Streams</h1>
-        <p>Blow Chunks as you have em</p>
+        <img src="/next-gen-server-js/assets/hono-nitroa.66f937ce.png" alt="" />
       </article>
 
       <article>
-        <!-- <img class="fit" src="./icons/streams.png" alt="" /> -->
+        <div class="title">
+          <h2>Invokers</h2>
+          <p>Declarative Click Handlers</p>
+        </div>
+        <img src="/next-gen-server-js/assets/commands.61adfed8.png" alt="" />
+      </article>
+
+      <article class="topic-slide">
+        <h2>Speculation</h2>
+        <p>prefetch and preload eagerly</p>
+      </article>
+
+      <article>
+        <img
+          src="https://img.youtube.com/vi/-Ln-8QM8KhQ/maxresdefault.jpg"
+          alt=""
+          class="wide"
+        />
+      </article>
+
+      <article>
+        <img src="/next-gen-server-js/assets/speculation-rules.0e386908.png" class="fit" />
+      </article>
+
+      <article>
+        <img src="/next-gen-server-js/assets/harry.721c3cec.png" alt="" class="wide" />
+      </article>
+      <article>
+        <img src="/next-gen-server-js/assets/speculative-loads.dd49b0d2.png" alt="" class="wide" />
+      </article>
+
+      <article class="topic-slide">
+        <h2>Dialog</h2>
+      </article>
+      <article class="topic-slide">
+        <h2>Popover</h2>
+      </article>
+      <article class="topic-slide">
+        <h2>CSS Anchors</h2>
+        <!-- <video src="./ss/anchor.mp4" muted loop autoplay playsinline></video> -->
+      </article>
+
+      <article>
         <video
-          style="width: 100%; height: 100%"
-          src="/next-gen-server-js/assets/streaming.ad7212b6.mp4"
+          src="/next-gen-server-js/assets/position-try.bf9a9c95.mp4"
           muted
+          loop
           autoplay
           playsinline
+        ></video>
+      </article>
+
+      <article>
+        <img src="/next-gen-server-js/assets/anchor-trys.819eecf4.png" alt="" />
+      </article>
+      <article class="topic-slide">
+        <h2>Web Components</h2>
+        <p>You don't have to write them, but you'll enjoy using them!</p>
+      </article>
+      <article>
+        <div class="side-by-side">
+          <ul class="buildx" style="text-align: left">
+            <li>✅ Encapsulated</li>
+            <li>✅ Framework Agnostic</li>
+            <li>
+              ✅ Easy<small><em>ish</em></small> to Style
+            </li>
+            <li>✅ A Breeze to Use</li>
+            <li>✅ Standardized - not going anywhere</li>
+          </ul>
+          <img src="/next-gen-server-js/assets/media-chrome.c66b6dc0.png" alt="" />
+        </div>
+      </article>
+      <article>
+        <p>
+          Media Chrome: Fully featured, customizable, pluggable Video Player
+        </p>
+        <img src="/next-gen-server-js/assets/media-chrome-player.5f92e754.png" alt="" />
+      </article>
+      <article>
+        <div class="side-by-side">
+          <h2>Web Awesome - All the UI components missing from the web</h2>
+          <img src="/next-gen-server-js/assets/shoelace.1365a5d1.png" alt="" />
+        </div>
+      </article>
+
+      <article class="topic-slide">
+        <h2>AI</h2>
+      </article>
+      <article><img src="/next-gen-server-js/assets/transformers.e0c5acb9.png" alt="" class="wide" /></article>
+      <article>
+        <div class="side-by-side">
+          <h2>Emotion Detection</h2>
+          <img src="/next-gen-server-js/assets/emotion.ee6c24eb.png" alt="" class="wide" />
+        </div>
+      </article>
+      <article>
+        <div class="side-by-side">
+          <h2>Client Side Depth Detection</h2>
+          <video src="/next-gen-server-js/assets/depth.500d1408.mp4" muted loop autoplay playsinline></video>
+        </div>
+      </article>
+      <article>
+        <video
+          src="/next-gen-server-js/assets/bg-remover.6e93511e.mp4"
+          muted
           loop
+          autoplay
+          playsinline
+        ></video>
+      </article>
+
+      <article>
+        <div class="side-by-side">
+          <h2>Smaller</h2>
+          <img src="/next-gen-server-js/assets/ai-model-size.c8f05d55.png" alt="" />
+        </div>
+      </article>
+      <article>
+        <div class="side-by-side">
+          <h2>Faster</h2>
+          <img src="/next-gen-server-js/assets/web-gpu.f3262d0a.png" alt="" />
+        </div>
+      </article>
+
+      <article>
+        <h2>window.ai</h2>
+        <img src="/next-gen-server-js/assets/windowai.08e02ce2.png" alt="" class="fit" />
+      </article>
+
+      <article class="topic-slide">
+        <h2>Server JavaScript is great. [bun, deno, node, cloudflare,]</h2>
+        <!-- TODO Show logos of runtimes, Rattle off a few benefits -->
+      </article>
+
+      <article class="topic-slide">
+        <h2>calc-size()</h2>
+      </article>
+      <article>
+        <div class="side-by-side">
+          <video
+            src="/next-gen-server-js/assets/height-auto.b2409efd.mp4"
+            muted
+            loop
+            autoplay
+            playsinline
+          ></video>
+          <img src="/next-gen-server-js/assets/calc-auto.0e2e9ac2.png" alt="" />
+        </div>
+      </article>
+      <article class="topic-slide">
+        <h2>@starting-style</h2>
+      </article>
+      <article>
+        <div class="side-by-side">
+          <img src="/next-gen-server-js/assets/starting-style-li.4abd40f3.png" alt="" />
+          <video
+            src="/next-gen-server-js/assets/starting-style.3ff47a09.mp4"
+            muted
+            loop
+            autoplay
+            playsinline
+          ></video>
+        </div>
+      </article>
+      <article>
+        <h1>View Transitions</h1>
+        <p>CSS and JS</p>
+      </article>
+      <!-- <article>
+        <img src="./ss/view-transition-name-1.png" alt="" />
+        <img src="./ss/view-transition-2.png" alt="" />
+      </article> -->
+      <article>
+        <video
+          src="/next-gen-server-js/assets/view-video.8cff2714.mp4"
+          muted
+          loop
+          autoplay
+          playsinline
         ></video>
       </article>
       <article>
-        <img class="fit" src="/next-gen-server-js/assets/abort.4accac27.png" alt="" />
+        <img src="/next-gen-server-js/assets/video-view.eb571817.png" alt="" />
+      </article>
+      <article>
+        <img src="/next-gen-server-js/assets/view-transition.77cbdac3.png" alt="" />
       </article>
 
       <article>
-        <img class="fit" src="/next-gen-server-js/assets/abort-server.e87a3f36.png" alt="" />
+        <video
+          src="/next-gen-server-js/assets/view-video.8cff2714.mp4"
+          muted
+          loop
+          autoplay
+          playsinline
+        ></video>
+      </article>
+      <article>
+        <video
+          src="/next-gen-server-js/assets/view-transitions.2294e81e.mp4"
+          muted
+          loop
+          autoplay
+          playsinline
+        ></video>
+      </article>
+
+      <article class="topic-slide">
+        <h2>CSS Relative Colors</h2>
+        <img src="/next-gen-server-js/assets/relative-color.018b3d52.png" alt="" />
+      </article>
+      <article>
+        <video
+          src="/next-gen-server-js/assets/css-colors.2a048c7d.mp4"
+          muted
+          loop
+          autoplay
+          playsinline
+        ></video>
+      </article>
+      <article>
+        <h2>Scoped CSS</h2>
+      </article>
+      <article class="topic-slide">
+        <div class="side-by-side">
+          <h2>Implicit Scope</h2>
+          <img src="/next-gen-server-js/assets/css-scope-1.6b5ff744.png" alt="" />
+        </div>
       </article>
 
       <article>
-        <img src="/next-gen-server-js/assets/react-streams.6625a33a.png" alt="" />
-      </article>
-
-      <article>
-        <h1>Events!</h1>
-        <p>Listen for events on anything!</p>
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/event1.f8d1fe83.png" alt="" />
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/event2.40f221cc.png" alt="" />
-        <!-- Node, DEno, vbun -->
-        <!-- Cloudflare fetch, scheduled and queue -->
-      </article>
-
-      <article>
-        <h1>Form Data</h1>
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/formData.536bad41.png" alt="" />
-      </article>
-
-      <article>
-        <h1>Web Workers</h1>
-        <ul class="build">
-          <li>Multi Threaded / Parallel</li>
-          <li>CPU intensive tasks</li>
-          <li>Non-blocking</li>
-        </ul>
-      </article>
-
-      <!-- <article>
-        <h1>Service Workers-ish</h1>
-        <p>Intercepting Requests</p>
-      </article>
-
-      <article>
-        <img src="./icons/stream-replace.png" alt="" />
-      </article>
-
-      <article>
-        <ul class="build">
-          <li>Easy Proxy!</li>
-          <li>Add custom CSS to Websites</li>
-          <li>Migrate Slowly</li>
-        </ul>
-      </article> -->
-
-      <article>
-        <h1>alert()<br />prompt()<br />confirm()</h1>
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/alert.b6124ec8.png" alt="" />
+        <div class="side-by-side">
+          <h2>Explicit Scope</h2>
+          <img src="/next-gen-server-js/assets/css-scope-2.28a06c94.png" alt="" />
+        </div>
       </article>
       <article>
-        <img src="/next-gen-server-js/assets/alert-output.59dde5ca.png" alt="" />
-      </article>
-
-      <!-- <article>
-        <h1>Import Protocols</h1>
-      </article> -->
-
-      <article>
-        <h1>Async<br />Local<br />Storage</h1>
-        <p>Really cool new API</p>
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/als.a592218e.png" alt="" />
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/ryan-async.92f7dcb7.png" alt="" />
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/async-context.2360f480.png" alt="" />
-      </article>
-
-      <article>
-        <h1>Developer Ecosystem</h1>
-        <p>The tooling is standardizing on standards</p>
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/unjs.33b221eb.png" alt="" class="fit" />
-      </article>
-
-      <article>
-        <h1>unenv</h1>
-      </article>
-
-      <article>
-        <img class="fit" src="/next-gen-server-js/assets/unenv-cf.f0826209.png" alt="" />
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/unenv-apis.eb9eb75c.png" alt="" class="fit" />
-      </article>
-
-      <article>
-        <p>Deno, Bun, Cloudflare, Node</p>
-        <img src="/next-gen-server-js/assets/unenv-deno.caf54f2d.png" class="wide" />
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/hono.fe0ed368.png" alt="" class="fit" />
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/nitro.ca99e92b.png" class="fit" />
-      </article>
-      <article>
-        <p>Think of these as standards based Express that can run anywhere.</p>
-        <p>HMR, Routing, Middlware, Caching, Web Sockets, Assets</p>
-      </article>
-      <article>
-        <img src="/next-gen-server-js/assets/h3.47aba8c6.png" alt="" class="fit" />
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/srvx.0c34f844.png" alt="" class="fit" />
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/vinxi.0cd23c72.png" alt="" class="fit" />
-      </article>
-
-      <article>
-        <h1>Vite + Nitro = Vinxi</h1>
-      </article>
-
-      <article>
-        <h3>Build your own Framework</h3>
-        <p>Any JS LIb + Standard Server = Metaframework</p>
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/tanstack.576329a8.png" alt="" class="fit" />
-      </article>
-      <article>
-        <img src="/next-gen-server-js/assets/solid-start.25a9617a.png" alt="" class="fit" />
-      </article>
-
-      <!-- <article>
-        <h1>Solid Start / Tanstack Start</h1>
-        <p>Solid.js or React Tansack Router + Query</p>
-      </article> -->
-
-      <article>
-        <ul style="text-align: left">
-          <li>✅ Routing</li>
-          <li>✅ RPC</li>
-          <li>✅ Data Loaders</li>
-          <li>✅ Middleware</li>
-          <li>✅ API Endpoints</li>
-          <li>✅ Server Rendering</li>
-          <li>✅ Streaming</li>
-          <li>✅ caching</li>
-          <li>+ More.</li>
-        </ul>
-      </article>
-
-      <article>
-        <h2>Tanstack Start</h2>
-        <p>Client: Vite, Tanstack Query, Tanstack Router</p>
-        <p>Server: Vinxi → Nitro → H3 → srvx</p>
-      </article>
-
-      <article>
-        <h3>import { DOMParser, parseHTML } from 'linkedom/worker';</h3>
-        <p>JSDom Alternative. Works everywhere</p>
-      </article>
-
-      <article>
-        <h1>HTMLRewriter</h1>
-        <ul>
-          <li>Cloudflare Invented</li>
-          <li>Re-implemented everywhere</li>
-          <li>Not a standard</li>
-        </ul>
-      </article>
-
-      <article>
-        <img src="/next-gen-server-js/assets/rewriter.728ccbb8.png" alt="" />
-      </article>
-
-      <!-- <article>
-        <img src="./icons/worker-tools.png" alt="" />
-        <a href="https://github.com/worker-tools" target="_blank"
-          >worker-tools</a
-        >
-      </article> -->
-      <!-- <article>
-        <h1>Filesystem</h1>
-        <p>No standard FS API</p>
-        <p>whatwg/fs maybe?</p>
-      </article> -->
-
-      <article>
-        <h1>So much more!</h1>
-      </article>
-
-      <article>
-        <h1>This ins't write once work everywhere</h1>
-        <p>At least not yet...</p>
-      </article>
-
-      <article>
-        <h3>
-          It is a set of <mark>standardized APIs</mark> and an
-          <mark> ecosystem of tools </mark> that work together
-        </h3>
-        <!-- <p>Servers 🤝 Browsers</p> -->
-      </article>
-
-      <!-- <article>
-        <p>
-          TODO: Add something here about how each of these standards and each of
-          these layers make for a powerful future web
-        </p>
-      </article> -->
-      <article>
-        <p>
-          <mark>Future Server</mark> JS isn't about making it work everywhere.
-        </p>
-        <p class="balance">
-          It's about <mark>building with standards</mark>, enjoying the huge
-          <mark>ecosystem's best tools</mark> and having the choice for it to
-          run anywhere.
-        </p>
+        <h2>Donut Scope</h2>
+        <div class="side-by-side">
+          <img src="/next-gen-server-js/assets/donut-scope-left.cd9267ca.png" alt="" />
+          <img src="/next-gen-server-js/assets/donut-scope-right.a67ef65d.png" alt="" />
+        </div>
       </article>
 
       <article>
