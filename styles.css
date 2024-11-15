@@ -5,7 +5,7 @@
   --color2: #0ff;
   --color3: #240066;
   --color-vanilla: #fffcee;
-  --color-black: #000;
+  --color-black: #183549;
   --i: 0.05;
   --noCalc: calc(var(--i) * 2);
   --fogColor: hsl(calc(243 + var(--i) * 255), 100%, 68%);
@@ -46,12 +46,16 @@ h1 {
   paint-order: stroke fill;
   display: inline-block;
   letter-spacing: 0;
-  -webkit-text-stroke: 20px black;
+  --stroke: hsl(from var(--color-black) h s calc(l - 5));
+  -webkit-text-stroke: 20px var(--stroke);
   --walk: 0.05em;
   --walkHalf: calc(var(--walk) * 1.5);
-  text-shadow: var(--walk) var(--walk) 0 black,
-    calc(var(--walk) * -1) var(--walk) 0 black,
+  text-shadow: var(--walk) var(--walk) 0 var(--stroke),
+    calc(var(--walk) * -1) var(--walk) 0 var(--stroke),
     var(--walkHalf) var(--walkHalf) 0 var(--yellow);
+  --shadow: hsl(from var(--color-black) h s calc(l - 9));
+  /* --shadow: red; */
+  filter: drop-shadow(0px 10px 9px var(--shadow));
 }
 
 span.word {
@@ -132,9 +136,8 @@ h6 {
 
 p,
 li {
-  font-family: "Ika VAR";
-  font-weight: 700;
-  letter-spacing: -0.05em;
+  font-family: "geist mono", monospace;
+  font-weight: 500;
   font-size: 50px;
 }
 
@@ -193,9 +196,10 @@ img.wide {
     <img>
   </article>
 */
-article:has(> img:only-child) {
+article:has(> :is(img, video):only-child) {
   padding: 0;
-  & img {
+  grid-auto-rows: 100%;
+  & > * {
     width: 100%;
     height: 100%;
     max-height: none;
@@ -206,13 +210,49 @@ article:has(> img:only-child) {
 /*
   <article>
     <h2></h2>
-    <img>
+    <img> or <video>
   </article>
 */
-article:has(h2 + img):not(:has(& > :nth-child(3))) {
-  grid-template-rows: auto 1fr;
+article:has(& > :is(h2, .title) + :is(img, video)):not(
+    :has(& > :nth-child(3))
+  ) {
+  /* background: red; */
+  grid-template-rows: auto minmax(0, 1fr);
+  align-items: center;
+  align-content: space-evenly;
   justify-items: stretch;
   justify-content: stretch;
+  gap: 20px;
+  img,
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.title {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  p {
+    margin: 0;
+  }
+}
+
+/*
+  Selects Slide Layouts that look like this:
+  <article>
+    <h#></h#> - Any Heading
+    <p></p> - OR one of p, ul, ol, blockquote, pre
+  </article>
+*/
+article:has(
+    > :is(h1, h2, h3, h4, h4, h5, h6) + :is(p, ul, ol, blockquote, pre)
+  ) {
+  align-content: center;
+  gap: 50px;
 }
 
 /*
@@ -223,6 +263,9 @@ article:has(h2 + img):not(:has(& > :nth-child(3))) {
 */
 article:has(> :is(h1, h2, h3, h4, h4, h5, h6):only-child) {
   padding: 5rem;
+  & > * {
+    font-size: 200px;
+  }
 }
 
 .columns {
@@ -235,12 +278,53 @@ article:has(> :is(h1, h2, h3, h4, h4, h5, h6):only-child) {
   text-wrap: balance;
 }
 
+article:has(& > .side-by-side) {
+  align-items: stretch;
+}
+
 .side-by-side {
   display: grid;
   grid-auto-flow: column;
-  img {
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  height: min-content;
+  text-align: right;
+  &:has(h1, h2, h3, h4, h5, h6) {
+    grid-template-columns: minmax(20%, 30%) 1fr;
+    gap: 50px;
+    align-content: center;
+    align-items: center;
+  }
+  img,
+  video {
     width: 100%;
     height: 100%;
+    background: #183549;
     object-fit: contain;
+  }
+}
+
+.icons {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  img {
+    height: 100px;
+    width: auto;
+  }
+}
+
+.buzz-word-grid {
+  /* display: flex; */
+  width: 100%;
+  text-align: left;
+  /* CSS columns */
+  columns: 2;
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  /* Select the parent slide that has this element */
+  li {
+    padding: 10px;
+  }
+  article:has(&) {
+    /* --display: block; */
   }
 }
