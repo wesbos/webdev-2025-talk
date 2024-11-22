@@ -77,6 +77,20 @@ span.letter {
   /* border: 1.5px solid white; */
   /* background: black; */
   display: inline-block;
+  animation: tilt 1s infinite;
+  animation-timing-function: steps(2);
+  /*
+  --left: -2deg;
+  --right: 2deg; */
+}
+
+@keyframes tilt {
+  from {
+    rotate: var(--left);
+  }
+  to {
+    rotate: var(--right);
+  }
 }
 
 body {
